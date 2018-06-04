@@ -8,8 +8,8 @@
     <description>LeanFT JUnit Test</description>
 
     <properties>
-        <test.src.dir>src</test.src.dir>
         <leanft.version>14.3.0</leanft.version>
+        <test.src.dir>src</test.src.dir>
     </properties>
 
     <dependencies>
@@ -53,6 +53,18 @@
     </repositories>
 
     <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/features</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <testSourceDirectory>src</testSourceDirectory>
         <plugins>
 			<!--Uncomment this section if you want to use the application model generator plugin-->
             <!--For details, see https://admhelp.microfocus.com/leanft/en/latest/HelpCenter/Content/HowTo/update-appModel.htm#hp-minitoc-item-3-->
