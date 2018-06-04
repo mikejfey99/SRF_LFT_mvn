@@ -7,6 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import com.hp.lft.sdk.*;
 import com.hp.lft.verifications.*;
+import com.hp.lft.sdk.web.*;
+import com.hp.lft.reportbuilder.*;
+import com.hp.lft.report.*;
 
 import unittesting.*;
 
@@ -36,7 +39,33 @@ public class LeanFtTest extends UnitTestClassBase {
     }
 
     @Test
-    public void test() throws GeneralLeanFtException {
+    public void test() throws GeneralLeanFtException, ReportException {
+
+        BrowserDescription bd = new BrowserDescription();
+
+        bd.setType(BrowserType.CHROME); //or: bd.set("type", BrowserType.INTERNET_EXPLORER) or: bd.set("type", "INTERNET_EXPLORER")
+
+        bd.set("version", "64");
+
+        bd.set("osType", "Windows");
+
+        bd.set("osVersion", "10");
+
+        bd.set("testName", "Fey LeanFT web test");
+
+        Browser browser = SrfLab.launchBrowser(bd);
+
+
+        browser.navigate("http://advantageonlineshopping.com/#/");
+
+        Link sPEAKERSShopNowLink = browser.describe(Link.class, new LinkDescription.Builder()
+                .innerText("SPEAKERS Shop Now ")
+                .tagName("DIV").build());
+        sPEAKERSShopNowLink.click();
+
+        Reporter.reportEvent("status", "passed test", Status.Passed);
+
+
     }
 
 }
