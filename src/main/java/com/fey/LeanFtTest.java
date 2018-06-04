@@ -51,7 +51,7 @@ public class LeanFtTest extends UnitTestClassBase {
 
         bd.set("osVersion", "10");
 
-        bd.set("testName", "Fey LRT SRF  Remote Execution");
+        bd.set("testName", "Fey LRT SRF  Remote Execution demo");
 
         Browser browser = SrfLab.launchBrowser(bd);
 
