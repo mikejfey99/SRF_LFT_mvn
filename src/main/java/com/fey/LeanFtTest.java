@@ -51,7 +51,7 @@ public class LeanFtTest extends UnitTestClassBase {
 
         bd.set("osVersion", "10");
 
-        bd.set("testName", "Fey LRT SRF  Remote Execution demo2");
+        bd.set("testName", "Fey LRT SRF  Remote Execution demozzzz");
 
         Browser browser = SrfLab.launchBrowser(bd);
 
@@ -62,6 +62,12 @@ public class LeanFtTest extends UnitTestClassBase {
                 .innerText("SPEAKERS Shop Now ")
                 .tagName("DIV").build());
         sPEAKERSShopNowLink.click();
+
+        WebElement dvantageWebElement = browser.describe(WebElement.class, new WebElementDescription.Builder()
+                .innerText("dvantage ")
+                .tagName("SPAN").build());
+
+        dvantageWebElement.click();
 
         Reporter.reportEvent("status", "passed test", Status.Passed);
 
