@@ -45,7 +45,7 @@ public class LeanFtTest extends UnitTestClassBase {
 
         bd.setType(BrowserType.CHROME); //or: bd.set("type", BrowserType.INTERNET_EXPLORER) or: bd.set("type", "INTERNET_EXPLORER")
 
-        bd.set("version", "64");
+        bd.set("version", "69");
 
         bd.set("osType", "Windows");
 
